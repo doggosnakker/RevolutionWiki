@@ -1,0 +1,84 @@
+{
+    "revolutions": [
+        {
+            "id": 0,
+            "title": "Glorious Revolution",
+            "subtitle": "1688 - 1689",
+            "image": "inglese.png",
+            "description": "La Glorious Revolution portò al passaggio dell'Inghilterra da monarchia assoluta a monarchia parlamentare.",
+            "content": [
+                { "type": "title", "text": "Contesto" },
+                { "type": "text", "text": "Dopo la morte di Carlo II nel 1685 il partito dei Tories fece salire sul trono Giacomo II, che sostenne i cattolici e governò con tendenze assolutistiche." },
+                { "type": "text", "text": "Per evitare una nuova guerra civile il Parlamento offrì la corona a Guglielmo d'Orange: Guglielmo sbarcò in Inghilterra e ottenne il potere senza spargimento di sangue, da cui il nome 'Glorious Revolution'." },
+                { "type": "title", "text": "Conseguenze legislative" },
+                { "type": "text", "text": "Nel 1689 Guglielmo III fu proclamato re e l'Inghilterra divenne una monarchia parlamentare. Furono accettate leggi che limitarono il potere reale e rafforzarono il Parlamento:" },
+                { "type": "text", "text": "- Bill of Rights: separazione dei poteri e supremazia del Parlamento\n- Act of Settlement: esclusione dei discendenti di Giacomo II dalla successione e affermazione dell'anglicanesimo\n- altre norme: libertà di stampa, limiti allo scioglimento arbitrario della Camera dei Comuni, fondazione della Banca d'Inghilterra." }
+            ],
+            "cards": [
+                { "title": "Sintesi", "description": "Guglielmo III sale al trono senza spargimenti, nasce la monarchia parlamentare.", "image": "images/inglese.png" }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "Rivoluzione Industriale",
+            "subtitle": "1760 - 1850",
+            "image": "industria.png",
+            "description": "La Rivoluzione industriale trasformò l'economia, la società e la tecnologia in Gran Bretagna, modificando lavoro e produzione.",
+            "content": [
+                { "type": "title", "text": "Perché cominciò in Inghilterra" },
+                { "type": "text", "text": "L'Inghilterra vantava una monarchia parlamentare consolidata, una borghesia dinamica, potere economico dopo la sconfitta dell'Invincibile Armata e grande disponibilità di materie prime come carbone e ferro." },
+                { "type": "title", "text": "Agricoltura e mercato" },
+                { "type": "text", "text": "Miglioramenti agricoli (rotazione delle colture, enclosures) aumentarono la produttività, favorirono lo sviluppo demografico e il mercato interno, e fornirono manodopera per le fabbriche." },
+                { "type": "title", "text": "Industria tessile" },
+                { "type": "text", "text": "Dal sistema di produzione a domicilio si passò a impianti industriali. Innovazioni: spoletta automatica, filatrici meccaniche e idrauliche, 'Mule Jenny' e telaio meccanico." },
+                { "type": "title", "text": "Industria siderurgica e macchina a vapore" },
+                { "type": "text", "text": "L'uso del coke al posto del carbone di legna e l'invenzione della macchina a vapore di James Watt (1769) permisero grande sviluppo industriale e la nascita di nuove industrie e trasporti (ferrovie, navi)." },
+                { "type": "title", "text": "Conseguenze sociali" },
+                { "type": "text", "text": "Urbanesimo, crescita incontrollata delle città, condizioni di lavoro dure (orari lunghi, salari bassi), sfruttamento di donne e bambini e nascita di tensioni sociali e movimenti di protesta (luddismo)." }
+            ],
+            "cards": [
+                { "title": "Industria tessile", "description": "Macchinari e filature rivoluzionarono la produzione del cotone.", "image": "images/industria.png" }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Rivoluzione Americana",
+            "subtitle": "1775 - 1783",
+            "image": "americana.png",
+            "description": "La guerra d'indipendenza delle tredici colonie contro la Gran Bretagna che portò alla nascita degli Stati Uniti d'America.",
+            "content": [
+                { "type": "title", "text": "Colonizzazione e società" },
+                { "type": "text", "text": "Le colonie nacquero per motivi economici e religiosi; alcune regioni si svilupparono con economie e strutture diverse (Nord commerciale, Centro etnicamente vario, Sud agricolo con piantagioni)." },
+                { "type": "title", "text": "Tensioni con la madrepatria" },
+                { "type": "text", "text": "Leggi come gli Acts of Navigation e tasse imposte (Sugar Act, Stamp Act) alimentarono il malcontento: 'No taxation without representation'. Eventi come il Boston Tea Party aumentarono le tensioni." },
+                { "type": "title", "text": "La guerra e l'indipendenza" },
+                { "type": "text", "text": "Dopo lo scoppio della guerra (Lexington, 1775) e la leadership di George Washington, le colonie ottennero alleanze straniere decisive (Francia) e vinsero con la resa di Yorktown (1781). Nel 1783 la Gran Bretagna riconobbe l'indipendenza." },
+                { "type": "title", "text": "Organizzazione dello Stato" },
+                { "type": "text", "text": "Dopo l'indipendenza nasceranno organi di governo come il Congresso, la Presidenza (con poteri definiti) e la Corte Suprema; la Dichiarazione d'Indipendenza (4 luglio 1776) è il documento fondante." }
+            ],
+            "cards": [
+                { "title": "Dichiarazione di Indipendenza", "description": "Il 4 luglio 1776 il Congresso adotta la Dichiarazione di Jefferson.", "image": "images/americana.png" }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Rivoluzione Francese",
+            "subtitle": "1789 - 1799",
+            "image": "francese.png",
+            "description": "Una rivoluzione che cambiò profondamente la Francia e influenzò l'Europa, con fasi che vanno dall'insurrezione popolare al Terrore e alla reazione termidoriana.",
+            "content": [
+                { "type": "title", "text": "Cause" },
+                { "type": "text", "text": "Crisi finanziaria, privilegi feudali, disuguaglianze sociali e diffusione delle idee illuministe crearono terreno per la rivolta del Terzo Stato." },
+                { "type": "title", "text": "Stati Generali e ascesa del Terzo Stato" },
+                { "type": "text", "text": "Nel 1789 la convocazione degli Stati Generali e il successivo Giuramento della Pallacorda portarono alla nascita dell'Assemblea Nazionale e al movimento rivoluzionario culminante con la presa della Bastiglia (14 luglio 1789)." },
+                { "type": "title", "text": "Svolgimenti e riforme" },
+                { "type": "text", "text": "Furono aboliti privilegi feudali, promulgata la Dichiarazione dei Diritti dell'Uomo e del Cittadino e avviate riforme amministrative, giuridiche e religiose (Costituzione del 1791)." },
+                { "type": "title", "text": "Il Terrore e la reazione" },
+                { "type": "text", "text": "Dopo l'escalation rivoluzionaria si instaurò il periodo del Terrore (Comitato di Salute Pubblica, Robespierre) con repressioni e ghigliottinamenti; la caduta di Robespierre nel 1794 aprì la strada alla reazione (Terrore Bianco) e alla Costituzione del 1795." }
+            ],
+            "cards": [
+                { "title": "Dichiarazione dei Diritti", "description": "Documento fondante che afferma libertà ed eguaglianza politica.", "image": "images/francese.png" }
+            ]
+        }
+    ]
+}

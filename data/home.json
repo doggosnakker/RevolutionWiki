@@ -1,0 +1,9 @@
+{
+
+    "cards": [
+        { "title": "Glorious Revolution", "description": "1688 - 1689", "image": "images/inglese.png", "revId": 0 },
+        { "title": "Rivoluzione industriale", "description": "1760 - 1850", "image": "images/industria.png", "revId": 1 },
+        { "title": "Rivoluzione americana", "description": "1775 - 1783", "image": "images/americana.png", "revId": 2 },
+        { "title": "Rivoluzione francese", "description": "1789 - 1799", "image": "images/francese.png", "revId": 3 }
+    ]
+}

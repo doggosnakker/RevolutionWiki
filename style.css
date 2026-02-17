@@ -1,0 +1,458 @@
+:root {
+    --background-1: #393E46;
+    --background-2: #222831;
+    --text-color: #EEEEEE;
+    --sub-text: #FFD369;
+    --bg-image: url(menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png);
+}
+
+body{
+    background-color: var(--background-1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+#nav1{
+    background-color: var(--background-2);
+}
+
+#searchButton{
+    cursor: pointer;
+    border-color: var(--sub-text);
+    color: var(--sub-text);
+}
+
+#searchButton:hover{
+    background-color: var(--sub-text);
+    color: var(--background-2);
+}
+
+.navbar-toggler{
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.navbar-brand{
+    color: var(--text-color);
+    font-family: Georgia;
+}
+
+.nav-link{
+    color: var(--text-color);
+}
+
+.navbar-nav .nav-link.active{
+    color: var(--text-color);
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color: var(--text-color);
+}
+
+.nav-link:focus, .nav-link:hover{
+    color: var(--text-color);
+}
+
+.navbar-brand:focus, .navbar-brand:hover{
+    color: var(--text-color);
+}
+
+.text{
+    text-align: center;
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: var(--background-1);
+    --bs-dropdown-border-color: var(--text-color);
+    --bs-dropdown-link-color: var(--text-color);
+    --bs-dropdown-divider-bg: var(--text-color);
+}
+
+.dropdown-item{
+    color: var(--text-color);
+}
+
+.form-control {
+    background-color: var(--background-1);
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.form-control:focus{
+    background-color: var(--background-1);
+    color: var(--text-color);
+    border-color: var(--sub-text);
+    box-shadow: var(--sub-text);
+}
+
+.navbar-toggler-icon{
+    background-image: var(--bg-image);
+    background-color: var(--background-1);
+    border-color: var(--text-color);
+}
+
+.navbar-toggler {
+    background-color: var(--background-1);
+    border-color: var(--text-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: var(--sub-text);
+}
+
+.carousel {
+    position: relative;
+    width: 70%;
+    height: 500px;
+    overflow: hidden;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    font-family: Georgia;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 2rem 5rem 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    z-index: 10;
+    text-align: center;
+}
+
+.text-overlay h1 {
+    color: var(--text-color);
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.text-overlay p {
+    color: var(--text-color);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 15;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        width: 95%;
+        height: 400px;
+        margin: 1rem auto;
+        border-radius: 8px;
+    }
+
+    .text-overlay {
+        padding: 2rem 1.5rem 4rem 1.5rem;
+    }
+
+    .text-overlay h1 {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .text-overlay p {
+        font-size: 0.95rem;
+    }
+
+    .dots {
+        bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .text-overlay {
+        padding: 1.5rem 1rem 3.5rem 1rem;
+    }
+
+    .text-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-overlay p {
+        font-size: 0.85rem;
+    }
+
+    .dots {
+        bottom: 1rem;
+    }
+}
+
+/* Home cards grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    width: 90%;
+    margin: 2rem auto 4rem auto;
+}
+
+.card-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 0.75rem;
+    border-radius: 8px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* allow absolute-positioned elements inside card */
+.card-item { position: relative; }
+
+.card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.card-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card-item h3 {
+    margin: 0.25rem 0 0;
+    font-size: 1.1rem;
+}
+
+.card-item p {
+    margin: 0;
+    color: #dcdcdc;
+    font-size: 0.95rem;
+}
+
+/* Favorite button */
+.fav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.fav-btn.fav {
+    background: linear-gradient(90deg, rgba(255,211,105,0.12), rgba(255,211,105,0.06));
+    border-color: rgba(255,211,105,0.3);
+    color: var(--sub-text);
+}
+
+.fav-container { display:flex; justify-content:flex-end; align-items:center; gap:0.5rem; margin-top:0.5rem }
+
+/* position favorite button at top-right of card */
+.fav-container { position: absolute; bottom: 8px; right: 8px; margin-top: 0; }
+.fav-btn { min-width: 36px; height: 36px; padding: 0; justify-content: center; border-radius: 6px; font-size: 1.05rem; }
+
+/* Hide label on card buttons (show only icon) */
+.card-item .fav-btn { padding: 6px; min-width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+.card-item .fav-btn .fav-label { display: none; }
+
+/* Make fav button text visible elsewhere (e.g., in favorites list) */
+.fav-btn .fav-label { display: inline; margin-left: 6px; }
+
+/* Styles for revolution detail page to match home look */
+#revolution-root {
+    background: linear-gradient(180deg, rgba(0,0,0,0.04), transparent);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+
+#revolution-root h1 {
+    font-family: Georgia;
+    margin-bottom: 0.25rem;
+}
+
+#revolution-root h4 {
+    color: var(--sub-text);
+    margin-top: 0;
+}
+
+#revolution-root p {
+    color: #dcdcdc;
+}
+
+/* reuse card styles from home */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.card-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04); padding: 0.75rem; border-radius:8px; }
+.card-item img { width:100%; height:160px; object-fit:cover; border-radius:6px; }
+
+.navbar-text .nav-link { color: var(--text-color); text-decoration: none; }
+.navbar-text .nav-link:hover { color: var(--sub-text); }
+
+/* Enhanced Favorites Card Styling */
+.fav-card {
+    background: linear-gradient(135deg, rgba(255,211,105,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1.5px solid rgba(255,211,105,0.2);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,211,105,0.1);
+}
+
+.fav-card:hover {
+    background: linear-gradient(135deg, rgba(255,211,105,0.1) 0%, rgba(255,255,255,0.04) 100%);
+    border-color: rgba(255,211,105,0.4);
+    box-shadow: 0 8px 25px rgba(255,211,105,0.1), inset 0 1px 0 rgba(255,211,105,0.1);
+}
+
+.fav-card img {
+    height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.fav-card:hover img {
+    transform: scale(1.05);
+}
+
+.fav-content {
+    padding: 1rem;
+}
+
+.fav-card h3 {
+    color: var(--text-color);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.fav-card p {
+    color: var(--sub-text);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.fav-remove {
+    background: linear-gradient(90deg, rgba(255,211,105,0.15), rgba(255,211,105,0.08));
+    border: 1.5px solid rgba(255,211,105,0.35);
+    color: var(--sub-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    min-width: 40px;
+}
+
+.fav-remove:hover {
+    background: linear-gradient(90deg, rgba(255,211,105,0.25), rgba(255,211,105,0.15));
+    border-color: rgba(255,211,105,0.6);
+    box-shadow: 0 4px 12px rgba(255,211,105,0.15);
+    transform: translateY(-2px);
+}
+
+.fav-remove:active {
+    transform: translateY(0);
+}
+
+.fav-container {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    justify-content: flex-start;
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Favorite link (text-only) */
+.fav-link {
+    color: var(--sub-text);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.fav-link:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+/* Page Title - Bottom Right */
+.page-title {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-family: Georgia;
+    font-size: 2.5rem;
+    color: var(--sub-text);
+    font-weight: 300;
+    letter-spacing: 1px;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preferiti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>main{padding:1.5rem}</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg" id="nav1">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">RevolutionSite</a>
+    </div>
+  </nav>
+
+  <main>
+    <div id="favoritesGrid" class="cards-grid"></div>
+  </main>
+
+  <script>
+    const FAV_KEY = 'favRevolutions';
+    function getFavorites() {
+      try { return JSON.parse(localStorage.getItem(FAV_KEY) || '[]'); } catch(e){ return []; }
+    }
+
+    function removeFavorite(id) {
+      const fav = getFavorites().map(String);
+      const sid = String(id);
+      const idx = fav.indexOf(sid);
+      if (idx !== -1) { fav.splice(idx,1); localStorage.setItem(FAV_KEY, JSON.stringify(fav)); }
+      render();
+    }
+
+    function render() {
+      const grid = document.getElementById('favoritesGrid');
+      grid.innerHTML = '';
+      const fav = getFavorites().map(String);
+      if (!fav.length) {
+        grid.innerHTML = '<p>Non hai preferiti.</p>';
+        return;
+      }
+
+      fetch('data/revolutions.json').then(r=>r.json()).then(data=>{
+        const list = data.revolutions || [];
+        fav.forEach(id => {
+          const rev = list.find(x => String(x.id) === String(id));
+          if (!rev) return;
+          const card = document.createElement('article'); card.className='card-item fav-card';
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', (e) => { if (e.target.tagName !== 'BUTTON') window.location.href=`rivoluzione.html?id=${encodeURIComponent(rev.id)}`; });
+        
+          if (rev.image) { const img=document.createElement('img'); img.src="images/" + rev.image; img.alt=rev.title; card.appendChild(img); }
+          const content = document.createElement('div'); content.className='fav-content';
+          const h3=document.createElement('h3'); h3.textContent=rev.title; content.appendChild(h3);
+          const p=document.createElement('p'); p.textContent=rev.subtitle || ''; content.appendChild(p);
+          card.appendChild(content);
+          const btns = document.createElement('div'); btns.className='fav-container';
+          const rem = document.createElement('a'); rem.className='fav-link'; rem.textContent='rimuovi'; rem.style.cursor='pointer'; rem.title='Rimuovi dai preferiti'; rem.addEventListener('click', (e) => { e.stopPropagation(); removeFavorite(rev.id); });
+          btns.appendChild(rem); card.appendChild(btns);
+          grid.appendChild(card);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=> render());
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rivoluzione - Dettaglio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg" id="nav1">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">RevolutionSite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+
+        </ul>
+        <div class="navbar-text ms-3">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding:1.5rem">
+    <a href="index.html">← Torna alla Home</a>
+    <section id="revolution-root" style="margin-top:1rem">
+      <h1 id="rev-title"></h1>
+      <h4 id="rev-subtitle"></h4>
+      <p id="rev-description"></p>
+      <img id="rev-image" alt="" style="max-width:100%;border-radius:8px;margin:1rem 0;display:none;"/>
+
+      <div id="rev-content"></div>
+    </section>
+  </main>
+
+  <script>
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function renderContent(root, content) {
+      content.forEach((item, idx) => {
+        const section = document.createElement('section');
+        section.id = `sec-${idx}`;
+        section.className = 'rev-section';
+        if (item.type === 'title') {
+          const h = document.createElement('h3');
+          h.textContent = item.text;
+          section.appendChild(h);
+        } else if (item.type === 'text') {
+          const p = document.createElement('p');
+          p.textContent = item.text;
+          section.appendChild(p);
+        }
+        root.appendChild(section);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const idParam = getQueryParam('id');
+      fetch('data/revolutions.json')
+        .then(r => r.json())
+        .then(data => {
+          const list = data.revolutions || [];
+          let rev = null;
+
+          if (!idParam) rev = list[0];
+          else {
+            rev = list.find(x => String(x.id) === String(idParam) || x.title === idParam);
+          }
+
+          if (!rev) {
+            document.getElementById('rev-title').textContent = 'Rivoluzione non trovata';
+            return;
+          }
+
+          document.getElementById('rev-title').textContent = rev.title || '';
+          document.getElementById('rev-subtitle').textContent = rev.subtitle || '';
+          document.getElementById('rev-description').textContent = rev.description || '';
+
+          if (rev.image) {
+            const img = document.getElementById('rev-image');
+            img.src = "images/" + rev.image;
+            img.style.display = '';
+          }
+
+          const contentRoot = document.getElementById('rev-content');
+          if (Array.isArray(rev.content)) renderContent(contentRoot, rev.content);
+
+          const cardsRoot = document.getElementById('rev-cards');
+          if (cardsRoot && Array.isArray(rev.cards)) {
+            rev.cards.forEach(c => {
+              const card = document.createElement('article');
+              card.className = 'card-item';
+
+              if (c.image) {
+                const im = document.createElement('img');
+                im.src = c.image;
+                im.alt = c.title || '';
+                card.appendChild(im);
+              }
+              if (c.title) {
+                const h3 = document.createElement('h3');
+                h3.textContent = c.title;
+                card.appendChild(h3);
+              }
+              if (c.description) {
+                const p = document.createElement('p');
+                p.textContent = c.description;
+                card.appendChild(p);
+              }
+
+              cardsRoot.appendChild(card);
+            });
+          }
+
+          const navLink = document.getElementById('nav-rev-link');
+          if (navLink) {
+            navLink.textContent = rev.title || '';
+            navLink.href = `rivoluzione.html?id=${encodeURIComponent(rev.id)}`;
+            navLink.style.display = '';
+          }
+        })
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
