@@ -12,7 +12,7 @@ var filesToCache = [
     '/data/revolutions.json',
     '/rivoluzione.html',
     '/preferiti.html',
-    '/menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png',
+    '/images/menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png',
     '/script.js'
 
 ]; 
