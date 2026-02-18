@@ -3,7 +3,7 @@
     --background-2: #222831;
     --text-color: #EEEEEE;
     --sub-text: #FFD369;
-    --bg-image: url(menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png);
+    --bg-image: url(images/menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png);
 }
 
 body{
@@ -455,4 +455,5 @@ body{
         bottom: 1.5rem;
         right: 1.5rem;
     }
+
 }
