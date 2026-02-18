@@ -12,7 +12,6 @@ var filesToCache = [
     '/data/revolutions.json',
     '/rivoluzione.html',
     '/preferiti.html',
-    '/images/menu_32dp_EEEEEE_FILL0_wght400_GRAD0_opsz40.png',
     '/script.js'
 
 ]; 
